@@ -8,7 +8,7 @@ var browserify = require('browserify');
 var reactify = require('reactify');
 var source = require('vinyl-source-stream');
 var concat = require('gulp-concat');
-var eslint = require('gulp-eslint');
+//var eslint = require('gulp-eslint');
 
 var config = {
 	port : 9005,
@@ -70,10 +70,10 @@ gulp.task('css', function() {
 		.pipe(gulp.dest(config.paths.dist + '/css'));
 });
 
-gulp.task('lint', function () {
+/*gulp.task('lint', function () {
 	return gulp.src(config.paths.js)
 				.pipe(eslint({config:'eslint.config.json'}))
 				.pipe(eslint.format());
-});
+});*/
 
-gulp.task('default', ['html','js','css','lint','open','watch']); // start
+gulp.task('default', ['html','js','css','open','watch']); // start
