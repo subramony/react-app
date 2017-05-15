@@ -1,38 +1,12 @@
-$ = jQuery = require('jquery');
+//$ = jQuery = require('jquery');
+"use strict";
 
 var React = require('react');
-var Home = require('./Components/homepage.js');
-var About = require('./Components/about/aboutPage');
 
-(function(win) {
-	"use strict";
-	var App = React.createClass({
-		render : function() {
-			var Child;
+var Router = require('react-router');
+var routes = require('./routes');
 
-			switch(this.props.route) {
-				case 'about' : Child = About;
-							   break;
-			    default : Child = Home;
-			}	
-		
-		return (
-			<div>
-				<Child/>
-			</div>
-		);
-
-		}
-	});
-
-	function doRouting() {
-		var route = win.location.hash.substr(1);
-		React.render(<App route={route} />, document.getElementById('app'));
-	}
-
-
-	win.addEventListener('hashchange', doRouting);
-	doRouting();
-
-})(window);
+Router.run(routes, function (Handler){
+	React.render(<Handler/>, document.getElementById('app'));
+});
 

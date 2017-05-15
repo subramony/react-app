@@ -1,0 +1,36 @@
+.sidebar{
+	position: absolute;	
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    height:100%;
+    display: block;
+    background: #CED8F9;
+}
+.sidebar-right {
+	position: absolute;	
+	width: 300px;
+    height:100%;
+    display: block;    
+    top: 0;
+    bottom: 0;
+    right:0;
+    background: #CED8F9;
+}
+.content {
+	float :left;
+	margin-left: 30%;
+	width: 700px;
+
+}
+.right {
+	float:right;
+}
+.in-visible {
+	display : none;
+}
+.size-90 {
+	width:90%;
+	margin-left: 2%;
+}

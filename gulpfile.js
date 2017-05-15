@@ -18,12 +18,22 @@ var config = {
 		dist : './dist',
 		js : './src/**/.js',
 		mainJs : './src/main.js',
+		images : './src/images',
 		css : [
 			'node_modules/bootstrap/dist/css/bootstrap.min.css',
 			'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
 		]
 	}
 }
+
+gulp.task('images', function () {
+	gulp.src(config.paths.images)
+		.pipe(gulp.dest(config.paths.dist + '/images'))
+		.pipe(connect.reload());
+
+	gulp.src('./src/favicon.ico')
+		.pipe(gulp.dest(config.paths.dist));	
+});
 
 gulp.task('connect', function() {
 	connect.server({
@@ -76,4 +86,4 @@ gulp.task('css', function() {
 				.pipe(eslint.format());
 });*/
 
-gulp.task('default', ['html','js','css','open','watch']); // start
+gulp.task('default', ['html','js','css','images','open','watch']); // start

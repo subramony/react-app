@@ -3,9 +3,9 @@
 var React = require('react');
 
 var About = React.createClass({
-	render : function() {
-		return (
-			<div>
+	render : function () {
+		return (			
+			<div className="jumbotron">
 				<h1>About</h1>
 				<p>
 					This application uses the following technologies :
